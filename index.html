@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share KraftConnect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1 { color: #333; }
+        #content { background-color: #f4f4f4; padding: 20px; border-radius: 5px; white-space: pre-wrap; }
+        .button { display: block; width: 200px; margin: 20px auto; padding: 10px 20px; font-size: 16px; color: white; border: none; border-radius: 5px; cursor: pointer; text-align: center; text-decoration: none; }
+        #copyButton { background-color: #0077b5; }
+        #copyButton:hover { background-color: #006097; }
+        #shareButton { background-color: #00a0dc; }
+        #shareButton:hover { background-color: #008cc9; }
+        #message { text-align: center; color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Share KraftConnect</h1>
+    <div id="content">Marketing industry - We've got something for you!
+
+KraftConnect is here!
+
+It's a platform where all Kraftshala talent will be present.
+
+These folks work in some of the best media and creative agencies and brands across Performance Marketing, Growth, SEO, Content, and Social Media.
+
+> For professionals/recruiters, it's your chance to connect with handpicked folks from the industry to discover a talent for hiring/freelancing / or simply some project-based discussions.
+
+> For freshers/folks looking to start your digital marketing career, we were in your shoes not so long ago and can help you with a first-hand experience of how to navigate this period.
+
+> For Kraftshala alumni, if you've not yet added yourself to the pool, do that soon by connecting with the Kraftshala team.
+
+View Here - https://kraftshala.com/reviews
+
+#marketing #kraftshalaalumni #kraftconnect #kraftshalareviews #digitalmarketing</div>
+    <button id="copyButton" class="button">Copy to Clipboard</button>
+    <a id="shareButton" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fkraftshala.com%2Freviews" class="button">Share on LinkedIn</a>
+    <p id="message"></p>
+    <script>
+        var clipboard = new ClipboardJS('#copyButton', {
+            text: function() {
+                return document.querySelector('#content').innerText;
+            }
+        });
+        clipboard.on('success', function(e) {
+            document.getElementById('message').textContent = 'Content copied! Now click "Share on LinkedIn" to post.';
+            setTimeout(function() {
+                document.getElementById('message').textContent = '';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
